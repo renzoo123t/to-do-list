@@ -13,11 +13,15 @@ def add_task():
     mylabel = Label(root, text=input_box.get())
     mylabel.grid(column=0)
 
-mybutton = Button(root, text='Agregar', padx=10, command=add_task, fg='black', bg='#E0E3B6')
+def clear():
+    input_box.delete(0, END)
 
+add_button = Button(root, text='Agregar', padx=10, command=add_task, fg='black', bg='#E0E3B6')
+clear_button = Button(root, text='Clear', padx=10, command=clear, fg='black', bg='#F2BB2E' )
 
 principal_label.grid(row=0, column=0)
 input_box.grid(row=0, column=1, padx=10, pady=10)
-mybutton.grid(row=0, column=2)
+add_button.grid(row=0, column=2)
+clear_button.grid(row=0, column=3)
 
 root.mainloop()
