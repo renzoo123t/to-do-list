@@ -11,8 +11,8 @@ input_box = Entry(root, width=30, borderwidth=3)
 input_box.insert(0, 'Task')
 
 def add_task():
-    mylabel = Label(root, text=input_box.get())
-    mylabel.grid(column=0)
+    mycheckbutton = Checkbutton(root, text=input_box.get())
+    mycheckbutton.grid(column=0, sticky=W)
 
 def clear():
     input_box.delete(0, END)
