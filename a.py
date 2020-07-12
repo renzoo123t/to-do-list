@@ -3,7 +3,7 @@ from tkinter import *
 root = Tk()
 root.title('TO DO LIST')
 root.geometry('500x500')
-root.iconbitmap('C:/Users/Renzo Tello/Desktop/Python/GUI/pictures/list.ico')
+root.iconbitmap('C:/Users/Renzo Tello/Desktop/Python/GUI/images/list.ico')
 
 principal_label = Label(root, text='Hi!, add a new task: ')
 
