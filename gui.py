@@ -5,7 +5,7 @@ root = Tk()
 root.title('TO DO LIST')
 root.geometry('500x500')
 root.config(bg='#CECCBE')
-root.iconbitmap('C:/Users/Renzo Tello/Desktop/Python/GUI/images/list.ico')
+root.iconbitmap('./images/list.ico')
 
 principal_label = Label(root, text='Hi!, add a new task: ', bg='#CECCBE')
 
@@ -47,8 +47,8 @@ def switch():
         #mycheckbutton.config(text=input_box.get(), bg="#2B2B2B", fg="#CECCBE")
         btn_state = True
 
-on_img = PhotoImage(file=r'switch-on.png')
-off_img = PhotoImage(file=r'switch-off.png')
+on_img = PhotoImage(file=r'./images/switch-on.png')
+off_img = PhotoImage(file=r'./images/switch-off.png')
 
 btn = Button(root, text="OFF", borderwidth=0, command=switch, bg="#CECCBE", activebackground="#CECCBE")
 btn.config(image=off_img)
