@@ -14,7 +14,9 @@ input_box = Entry(root, width=30, borderwidth=3)
 input_box.insert(0, 'Task')
 
 #add_task, for add btn
+mycheckbutton = ''
 def add_task():
+    global mycheckbutton
     mycheckbutton = Checkbutton(root, text=input_box.get(), bg='#CECCBE')
     mycheckbutton.grid(column=0, sticky=W)
 
@@ -31,15 +33,18 @@ btn_state = False
 
 def switch():
     global btn_state
+    global mycheckbutton
     if btn_state:
         btn.config(image=off_img, bg="#CECCBE", activebackground="#CECCBE")
         root.config(bg="#CECCBE")
         principal_label.config(text='Hi!, add a new task: ', bg="#CECCBE", fg='#2B2B2B')
+        #mycheckbutton.config(text=input_box.get(), bg="#CECCBE", fg='#2B2B2B')
         btn_state = False
     else:
         btn.config(image=on_img, bg="#2B2B2B", activebackground="#2B2B2B")
         root.config(bg="#2B2B2B")
         principal_label.config(text='Hi!, add a new task: ', bg="#2B2B2B", fg="#CECCBE")
+        #mycheckbutton.config(text=input_box.get(), bg="#2B2B2B", fg="#CECCBE")
         btn_state = True
 
 on_img = PhotoImage(file=r'switch-on.png')
