@@ -9,6 +9,7 @@ root.geometry(f'{width_value}x{height_value}+0+0')
 root.config(bg='#CECCBE')
 root.iconbitmap('./images/list.ico')
 
+#Switch images
 on_img = PhotoImage(file=r'./images/switch-on.png') 
 off_img = PhotoImage(file=r'./images/switch-off.png')
 
@@ -18,11 +19,17 @@ principal_label = Label(root, text='Hi!, add a new task: ', bg='#CECCBE')
 input_box = Entry(root, width=30, borderwidth=3)
 input_box.insert(0, 'Task')
 
+#Create a list to add the tasks
 a = [ ]
+
 #add_task, for add btn
 def add_task():
     global a      
     mycheckbutton = Checkbutton(root, text=input_box.get(), bg='#CECCBE')
+    if btn_state:
+        mycheckbutton.config(bg="#2B2B2B", fg="#CECCBE")
+    else:
+        mycheckbutton.config(bg="#CECCBE", fg="#2B2B2B")
     mycheckbutton.grid(column=0, sticky=W)
     a.append(mycheckbutton)
     
@@ -30,6 +37,7 @@ def add_task():
 def clear():
     input_box.delete(0, END)
 
+#Switch mode function
 def switch():
     global btn_state
     
@@ -48,7 +56,7 @@ def switch():
             i.config(bg="#2B2B2B", fg="#CECCBE")
         btn_state = True
 
-#adding switch mode
+#Switch status
 btn_state = False
 
 #btn area
@@ -62,7 +70,6 @@ principal_label.grid(row=0, column=0)
 input_box.grid(row=0, column=1, padx=10, pady=10)
 add_button.grid(row=0, column=2, padx=2)
 clear_button.grid(row=0, column=3, padx=2)
-#btn.grid(row=0, column=4, padx=2)
 btn.place(relx=1.0, rely=0.0, anchor="ne", bordermode=OUTSIDE)
 
 #window in mainloop
